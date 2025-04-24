@@ -17,3 +17,9 @@ int main(){
     operation=b>>1;
     cout<<operation;
 }
+
+//short cut for << and >>: 
+//answer for << (left shift) = a*pow(2,b)
+//answer for >> (Right shift) = a/pow(2,b)
+
+//For right shift except the last one all of them goes right and the first one goes at last if we count from left
