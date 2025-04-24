@@ -26,3 +26,8 @@ int main(){
     cout<<"Maximum sub array sum is: "<<maxSum;
     return 0;
 }
+
+//Explanation:
+// It is like big(+) + small(-) = +
+//             big(-) + small(+) = -
+// So if result = (-) comes then current_sum will revert to '0' again it won't count negative values.
