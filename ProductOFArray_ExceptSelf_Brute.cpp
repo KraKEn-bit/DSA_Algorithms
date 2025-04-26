@@ -38,6 +38,7 @@ int main(){
 // Now, if you instead use answer.push_back(res);, you are not replacing elements, you are adding new elements at the end of the answer vector.
 // Since answer already had n zeros initially, you now have n zeros + n correct values,
 
+
 // For this part:
 // for(int i=0;i<n;i++){
 //     cout<<answer[i]<<" ";

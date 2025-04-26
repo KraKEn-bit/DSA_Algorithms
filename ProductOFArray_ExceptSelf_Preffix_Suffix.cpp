@@ -51,7 +51,6 @@ int main(){
 // }
 
 
-
 // Here I took a suffix and preffix to track the multiplications of numbers coming after and before ith element.
 //  If I approach this way from the left numbers upto that ith element, it is refferring to preffix else it is refferring to suffix intializing
 //  the first for preffix and last element for suffix with number=1. 
