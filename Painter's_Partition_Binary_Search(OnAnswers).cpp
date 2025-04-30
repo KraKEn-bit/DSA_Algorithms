@@ -72,3 +72,4 @@ int main(){
     cout<<ans;
     return 0;
 }
+//Similar to Book Allocation problem. See the explanation on that
