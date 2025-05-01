@@ -1,4 +1,5 @@
 //Dutch_National_Flag_Algorithm: Explanation is in my note khara!!!
+//Work: 2,0,2,1,1,0,1,2,0,0 to 0,0,0,0,1,1,1,2,2,2
 
 #include<iostream>
 #include<algorithm>
