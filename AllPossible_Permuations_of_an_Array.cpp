@@ -58,19 +58,10 @@ int main(){
         }
     }
 
-    // if(pivot==-1){//This is to be notified if there's no element that is greater than the after element like: 5 4 3 2 1 Then it only returns the reverse order
-    //     sort(array.rbegin(),array.rend());
-    // }
-    if(pivot == -1){
-        reverse(array.begin(), array.end());
-        continue; // Skip the rest!
+    if(pivot==-1){//This is to be notified if there's no element that is greater than the after element like: 5 4 3 2 1 
+        //Then it only returns the reverse order
+        sort(array.rbegin(),array.rend());
     }
-    //Why we use this logic isntead of the previous logic? 
-    //Ans:When pivot == -1, you're saying:
-    // "The array is in descending order (i.e., the last permutation), so I want to go back to the first permutation."
-    // That’s correct. But then you still go on and execute the next permutation logic (the swap and reverse), which breaks the logic.
-    // Result: It messes up the array by redoing changes on the already reversed array.
-
     for(int i=n-1;i>pivot;i--){
         if(array[i]>array[pivot]){
             swap(array[i],array[pivot]);
