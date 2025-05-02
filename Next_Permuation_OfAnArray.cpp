@@ -46,7 +46,8 @@ int main(){
     }
 
     if(pivot==-1){//This is to be notified if there's no element that is greater than the after element like: 5 4 3 2 1 Then it only returns the reverse order
-        sort(array.rbegin(),array.rend());
+        sort(array.begin(),array.end());
+        return 0;
     }
 
     for(int i=n-1;i>pivot;i--){
