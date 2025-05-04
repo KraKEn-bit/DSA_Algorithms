@@ -18,6 +18,10 @@ void digitsCount(int numb){
     }
     cout<<"Count of the digits of the number is: "<<count<<endl;
 }
+
+//An Armstrong number (also known as a narcissistic number, pluperfect number, or pluperfect digital invariant) 
+//is a number that is equal to the sum of its digits each raised to the power of the number of digits.
+
 bool isArmstrong(int number){
     int copyNumber=number;
     
@@ -25,14 +29,24 @@ bool isArmstrong(int number){
     //number. That's why i took a copy for the operation and for comparing the operated value I compare with the original number without changin 
     //anything of its digits.!!
 
-    int sumofCubes=0,digits=0;
+    int count_digits=0;
+    //counting digits:
+    while (copyNumber != 0) {
+        count_digits++;
+        copyNumber /= 10;
+    }
+
+    copyNumber=number;
+    double sum=0,digits=0;
     while(copyNumber!=0){
         digits=copyNumber%10;
-        sumofCubes+=(digits*digits*digits);
+        sum+=pow(digits,count_digits); 
+        //This is counting double values that's why there's a rounding value problem If I gsve integer values in pow().
         copyNumber=copyNumber/10;
     }
-    return sumofCubes==number;
+    return sum==number;
 }
+
 int main(){
     int n;
     cout<<"Enter a number: ";
