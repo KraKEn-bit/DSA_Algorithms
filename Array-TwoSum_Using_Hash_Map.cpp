@@ -7,7 +7,13 @@
 #include<vector>
 #include<limits.h>
 #include<unordered_map>
-#include<unordered_set>
+
+//Why unordered_map is used:
+//unordered_map allows constant time (O(1)) 
+//average-case lookups for checking whether a number exists — much faster than using a loop to search linearly (which would take O(n)).
+
+// 1)It stores each number as a key.
+// 2)The value is the index where the number appeared.
 
 using namespace std;
 
@@ -27,6 +33,7 @@ int main(){
         int first=array[i];
         int second=target-first;
         if(map_name.find(second)!=map_name.end()){
+            //If it is "==" Then not found else it is found
             cout<<map_name[second]<<" "<<i;
         }
         // This checks whether the number second = target - array[i] has already been seen earlier in the array 
