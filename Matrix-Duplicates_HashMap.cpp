@@ -5,6 +5,9 @@
 #include<vector>
 #include<limits.h>
 #include<unordered_set>
+//Why unordered_Set used?
+//In C++, an unordered_set is a container from the Standard Template Library (STL) that stores unique elements in no particular order.
+//It is implemented using a hash table, which allows for average constant time (O(1)) complexity for insertion, deletion, and lookup operations.
 
 using namespace std;
 
