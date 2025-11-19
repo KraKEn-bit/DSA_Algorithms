@@ -27,6 +27,4 @@ int main(){
         }
     }
     cout<<max_numb;
-
-    //cout<<array.size();
 }
