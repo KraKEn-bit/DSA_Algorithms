@@ -25,6 +25,8 @@ int main(){
 
     int n=arr.size();
 
+    k=k%n;
+    
     vector<int>temp(k);
     for(int i=n-k;i<n;i++){
         temp[i-(n-k)]=arr[i];
