@@ -22,6 +22,9 @@ int main(){
     int k;
     cin>>k;
 
+    int n=arr.size();
+    k=k%n;
+    
     vector<int>temp;
     for(int i=0;i<k;i++){
         temp.push_back(arr[i]);

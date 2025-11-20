@@ -26,6 +26,8 @@ int main(){
     vector<int>temp(k);
 
     int n=arr.size();
+    k=k%n;
+    
     for(int i=0;i<k;i++){
         temp[i]=arr[i];    
     }
