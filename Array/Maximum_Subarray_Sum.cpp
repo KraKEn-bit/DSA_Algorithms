@@ -29,6 +29,7 @@ int main(){
         res=0;
         for(int j=i;j<len;j++){
             res+=arr[j];
+            //maxres=max(maxres,res);
             if(res>maxres){
                 maxres=res;
                 start=i;
