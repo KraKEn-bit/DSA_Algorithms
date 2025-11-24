@@ -1,4 +1,4 @@
-// Maximum SubArray Sum Problem
+// Stock_Buy_Sell
 
 #include<iostream>
 #include<string>
@@ -23,16 +23,12 @@ int main(){
         arr.push_back(numb);
     }
 
-    int len=arr.size();
-
-    int currSum=0,maxSum = INT_MIN;
-
+    int len = arr.size();
+    int profit,minPrice=INT_MAX;
+    int maxProfit = 0;
     for(int i=0;i<len;i++){
-        currSum+=arr[i];
-        maxSum = max(maxSum,currSum);
-        if(currSum<0){
-            currSum=0;
-        }
+        minPrice = min(minPrice,arr[i]);
+        maxProfit = max(maxProfit,arr[i]-minPrice);
     }
-    cout<<maxSum;
+    cout<<maxProfit;
 }

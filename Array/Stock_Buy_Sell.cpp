@@ -1,5 +1,3 @@
-// Maximum SubArray Sum Problem
-
 #include<iostream>
 #include<string>
 #include<math.h>
@@ -23,16 +21,19 @@ int main(){
         arr.push_back(numb);
     }
 
-    int len=arr.size();
-
-    int currSum=0,maxSum = INT_MIN;
+    int len = arr.size();
+    int profit,maxProfit=INT_MIN;
 
     for(int i=0;i<len;i++){
-        currSum+=arr[i];
-        maxSum = max(maxSum,currSum);
-        if(currSum<0){
-            currSum=0;
+        for(int j=i+1;j<len;j++){
+            if(arr[i]>arr[j]){
+                profit=0;
+            }
+            else{
+            profit = arr[j]-arr[i];
+            }
+            maxProfit = max(maxProfit,profit);
         }
     }
-    cout<<maxSum;
+    cout<<maxProfit;
 }
