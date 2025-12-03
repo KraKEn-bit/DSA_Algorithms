@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "string": "cpp",
+        "algorithm": "cpp",
+        "queue": "cpp",
+        "stack": "cpp"
+    }
+}
