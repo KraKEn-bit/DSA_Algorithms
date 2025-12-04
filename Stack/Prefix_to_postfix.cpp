@@ -11,13 +11,11 @@
 using namespace std;
 
 int main(){
-
-    stack<string> st;
+    stack<string>st;
 
     string str;
     getline(cin,str);
 
-    string infx;
     int len = str.length();
 
     for(int i=len-1;i>=0;i--){
@@ -27,18 +25,18 @@ int main(){
             (str[i]>='0' && str[i]<='9')){
                 string op(1,str[i]);
                 st.push(op);
-            }
-            else{
-                string t1 = st.top();
-                st.pop();
+        }
+        else{
+            string t1 = st.top();
+            st.pop();
 
-                string t2 = st.top();
-                st.pop();
+            string t2 = st.top();
+            st.pop();
 
-                infx = '(' + t2 + str[i] + t1 + ')';
-
-                st.push(infx);
-            }
+            string postfix = t1 + t2 + str[i];
+            st.push(postfix);
+        }
     }
+
     cout<<st.top();
 }

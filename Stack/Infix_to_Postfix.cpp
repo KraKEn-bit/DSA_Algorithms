@@ -33,11 +33,12 @@ int main(){
     int len = str.length();
 
     for(int i=0;i<len;i++){
-        if((str[i]>='A' && str[i]<='Z') || 
+        if(str[i]==' ') continue;
+        if((str[i]>='A' && str[i]<='Z') ||
            (str[i]>='a' && str[i]<='z') ||
            (str[i]>='0' && str[i]<='9')){
-            ans.push_back(str[i]);
-        }
+             ans.push_back(str[i]);
+         }
         else if(str[i]=='('){
             st.push(str[i]);
         }
