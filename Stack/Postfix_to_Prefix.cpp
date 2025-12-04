@@ -10,6 +10,7 @@
 
 using namespace std;
 
+
 int main(){
     stack<string>st;
 
@@ -32,8 +33,8 @@ int main(){
             string t2 = st.top();
             st.pop();
 
-            string postfix = t1 + t2 + str[i];  
-            st.push(postfix);
+            string prefix = str[i] + t1 + t2;  
+            st.push(prefix);
         }
     }
     
