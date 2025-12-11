@@ -26,7 +26,6 @@ int main(){
 
     int n = array.size();
 
-    
     for(int i=n-1;i>=0;i--){
         if(array[i]==st1.top()){
             int current = st1.top();
@@ -43,6 +42,7 @@ int main(){
                 else{
                     continue;
                 }
+                st2.push(-1);
             }
         }
     }
