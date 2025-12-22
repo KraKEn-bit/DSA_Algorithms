@@ -11,44 +11,27 @@
 using namespace std;
 
 int main(){
-    stack<int> st1,st2;
-    vector<int>array;
+    int n;
+    cin >> n;
 
-    int numb;
-    while(true){
-        cin>>numb;
-        if(numb==-1){
-            break;
-        }
-        array.push_back(numb);
-        st1.push(numb);
-     }
-
-    int n = array.size();
-
-    for(int i=n-1;i>=0;i--){
-        if(array[i]==st1.top()){
-            int current = st1.top();
-            int start = i+1;
-            st1.pop();
-            if(current == array[n-1]){
-                st2.push(-1);
-            }
-            for(int j=start;j<n;j++){
-                if(current<array[j]){
-                    st2.push(array[j]);
-                    break;
-                }
-                else{
-                    continue;
-                }
-                st2.push(-1);
-            }
-        }
+    vector<int> array(n);  
+    for(int i = 0; i < n; i++){
+        cin >> array[i];
     }
 
-    while(!st2.empty()){
-        cout<<st2.top()<<" ";
-        st2.pop();
+    vector<int> next_greater_el(n, -1);  
+    stack<int> st; 
+
+    for(int i = 0; i < n; i++){
+        while(!st.empty() && array[i] > array[st.top()]){
+            next_greater_el[st.top()] = array[i];  
+            st.pop();
+        }
+        st.push(i);
     }
+
+    for(int x : next_greater_el){
+        cout << x << " ";
+    }
+    cout << endl;
 }

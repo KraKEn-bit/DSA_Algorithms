@@ -18,24 +18,14 @@ int main(){
         cin>>array[i];
     }
 
-    stack<int>temp;
-
-    int min_element;
-    cout<<"Outputs: "<<endl;
-    while(n--){
-        for(int i=0;i<n+1;i++){
-            min_element=INT_MAX;
-            for(int j=i;j<n+1;j++){
-                min_element = min(array[j],min_element); 
-            }
-            temp.push(min_element);
+    int sum=0;
+    int mod = (int)(1e9 + 7);
+    for(int i=0;i<n;i++){
+        int min_el = INT_MAX;
+        for(int j=i;j<n;j++){
+            min_el = min(array[j],min_el);
+            sum= (sum+min_el)%mod;
         }
     }
-    int res = 0;
-    while(!temp.empty()){
-        res+=temp.top();
-        temp.pop();
-    }
-
-    cout<<res;
+    cout<<sum;
 }
