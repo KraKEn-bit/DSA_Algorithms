@@ -11,27 +11,36 @@
 using namespace std;
 
 int main(){
+    
     int n;
-    cin >> n;
+    cin>>n;
 
-    vector<int> array(n);  
-    for(int i = 0; i < n; i++){
-        cin >> array[i];
+    stack<int> st;
+    vector<int>array(n);
+
+    array.resize(n); 
+    for(int i=0;i<n;i++){
+        cin>>array[i];
     }
 
-    vector<int> next_greater_el(n, -1);  
-    stack<int> st; 
+     vector<int>next_greater_el(n);
 
-    for(int i = 0; i < n; i++){
-        while(!st.empty() && array[i] > array[st.top()]){
-            next_greater_el[st.top()] = array[i];  
+     for(int i=n-1;i>=0;i--){
+        while(!st.empty() && st.top()<=array[i]){
             st.pop();
         }
-        st.push(i);
-    }
+        if(st.empty()){
+            next_greater_el[i] = -1;
+        }
+        else{
+            next_greater_el[i] = st.top();
+        }
+        st.push(array[i]);
+     }
 
-    for(int x : next_greater_el){
-        cout << x << " ";
-    }
-    cout << endl;
+     for(int x:next_greater_el){
+        cout<<x<<" ";
+     }
+
+
 }
