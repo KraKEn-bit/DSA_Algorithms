@@ -67,6 +67,7 @@ class List{
         void pop_front(){
             if(head==NULL){
                 cout<<"List is empty!";
+                return;
             }
             Node* temp;
             temp=head;
@@ -78,17 +79,21 @@ class List{
         void pop_back(){
             if(head==NULL){
                 cout<<"List is empty!";
+                return;
             }
-
+            if(head==tail){
+                delete head;
+                head=tail=NULL;
+                return;
+            }
             Node* temp;
             temp = head;
             while(temp->next!=tail){
                 temp = temp->next;
             }
-            //temp = tail;
+            delete tail;
+            tail = temp;
             temp->next = NULL;
-            delete temp;
-            temp = tail;
         }
 
         void insert(int value,int pos){
@@ -97,12 +102,34 @@ class List{
             Node* temp;
             temp = head;
 
+            if(pos<0){
+                cout<<"Invalid Position!"<<endl;
+                return;
+            }
+            if(pos==0){
+                push_front(value);
+                return; 
+            }
             for(int i=0;i<pos-1;i++){
                 temp = temp->next;
             }
 
             newNode->next = temp->next;
             temp->next = newNode;
+        }
+
+        void search(int key){
+            Node* temp=head;
+            int index = 0;
+
+            while(temp!=NULL){
+                if(temp->data == key){
+                    cout<<"Searched value's Index: "<<index<<endl;
+                }
+                temp = temp->next;
+                index++;
+            }
+            // cout<<"No Index Found!"<<endl;
         }
 };
 
@@ -126,7 +153,10 @@ int main(){
 
     ll.insert(5,2);
     ll.insert(20,3);
-    
+    ll.insert(59,0);
+
     ll.print();
+
+    ll.search(20);
 
 }
