@@ -4,5 +4,9 @@
         "algorithm": "cpp",
         "queue": "cpp",
         "stack": "cpp"
+    },
+    "launch": {
+        "configurations": [],
+        "compounds": []
     }
 }
