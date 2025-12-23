@@ -118,6 +118,26 @@ class List{
             temp->next = newNode;
         }
 
+        void delete_value(int value,int pos){
+            Node* temp;
+            temp = head;
+            if(pos<0){
+                cout<<"Invalid Position!"<<endl;
+                return;
+            }
+            if(pos==0){
+                pop_front();
+                return;
+            }
+            for(int i=0;i<pos-1;i++){
+                temp = temp->next;
+            }
+            Node* temp1 = temp->next;
+            temp->next = temp1->next;
+            temp1->next = NULL;
+            delete temp1;
+        }
+        
         void search(int key){
             Node* temp=head;
             int index = 0;
@@ -159,4 +179,8 @@ int main(){
 
     ll.search(20);
 
+    ll.delete_value(59,0);
+    ll.delete_value(4,1);
+
+    ll.print();
 }
