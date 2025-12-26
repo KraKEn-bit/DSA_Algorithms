@@ -54,21 +54,19 @@ class List{
 
         
         void print_middle(){
-            Node* first=head;
-            Node* second = head;
+            Node* Slow=head;
+            Node* Fast = head;
 
             if(head == NULL){
                 cout << "List is empty!" << endl;
                 return;
             
             }
-
-
-            while(second!=NULL && second->next!=NULL){
-                first = first->next;
-                second = second->next->next;
+            while(Slow!=NULL && Fast->next!=NULL){
+                Slow = Slow->next;
+                Fast = Fast->next->next;
             }
-            Node* temp = first;
+            Node* temp = Slow;
             while(temp!=NULL){
                 cout<<temp->data<<" ";
                 temp = temp->next;
