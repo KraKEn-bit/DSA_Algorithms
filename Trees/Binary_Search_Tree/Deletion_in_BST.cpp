@@ -75,6 +75,7 @@ Node* delNode(Node* root,int val){
             root->right = delNode(root->right,inOrderSuccessor->data);
         }
     }
+    return root;
 }
 
 Node* buildBST(vector<int>arr){
