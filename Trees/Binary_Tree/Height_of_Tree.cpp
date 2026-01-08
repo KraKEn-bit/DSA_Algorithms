@@ -39,7 +39,7 @@ Node* buildTree(vector<int>arr){
 
 int height(Node* root){
     if(root == NULL){
-        return 0;
+        return -1;
     }
 
     int leftheight = height(root->left);
